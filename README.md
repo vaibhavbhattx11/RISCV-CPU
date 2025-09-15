@@ -1,28 +1,36 @@
 # RISC-V CPU
-I have implemented a complete RISC-V CPU from scratch using logisim-evolution capable of handling all the instructions.  
-I have added implementation details and design images below.
+I am implementing a complete RISC-V CPU from scratch using Logisim-Evolution capable of handling almost all RV32I instructions.  
+I have briefed implementation details and design images below. [IN PROGRESS]
 
 ## Individual Components
-Below are the designs for each part of our CPU.
+Below are the designs for the major components of the CPU I have implemented.
 
 ### ALU
-Following is the design for our Arithmetic Logic Unit (ALU) and the result of the provided test cases.
+Following is the design for the Arithmetic Logic Unit (ALU). I have created simple logical circuits for each operation and used a multiplexer to direct the output. 
 
 #### Design:
-<img width="1216" height="833" alt="alu" src="https://github.com/user-attachments/assets/8caf0df5-c050-4abe-9160-850ff1bed17b" />
+<img width="1396" height="1048" alt="Screenshot 2025-09-15 172137" src="https://github.com/user-attachments/assets/35327c8a-930f-412f-a896-369cbfd3ca1e" />
 <br>
 
-#### Tests:
-<img width="684" height="171" alt="alu-tc" src="https://github.com/user-attachments/assets/607a7da6-d7ff-4a08-b260-66861352de2b" />
-<br>
 
 ### Register File
-Following is the design for our Register File and the result of the provided test cases.
+Following is the design for the register-file. It has 32 registers. Write enable has been demuxed(hardwired to 0 for x0) to its corresponding register rd, and write data is provided to all the registers. The output from each register is muxed to provide the required data for rs1 and rs2 for final outputs.
 
 #### Design:
-<img width="1366" height="1272" alt="regfile" src="https://github.com/user-attachments/assets/3c76b963-ea78-4b0f-b485-a9e69f4155b9" />
+<img width="1223" height="1230" alt="Screenshot 2025-09-15 173352" src="https://github.com/user-attachments/assets/2e09672f-4a9c-4176-a593-d6c4ee36887a" />
+
 <br>
 
-#### Tests:
-<img width="704" height="121" alt="regfile-success" src="https://github.com/user-attachments/assets/d16080bf-13e6-47e8-8389-891c8b398b26" />
+### Immediate Generator
+This component provides the imm value of the required type by fetching the relevant bits from the instruction input.
+
+#### Design:
+<img width="1394" height="685" alt="Screenshot 2025-09-15 172844" src="https://github.com/user-attachments/assets/aa424f2d-afd1-4694-9474-cd50cf1f1caf" />
+<br>
+
+### Branch Comparator
+This component provides the branch-equal and branch-less-than signal values for signed/unsigned options, that are used as part of our control logic for handling branch and jump operations.
+
+#### Design:
+<img width="1088" height="353" alt="Screenshot 2025-09-15 173617" src="https://github.com/user-attachments/assets/1a1ecc3e-3000-44fd-8dec-15fa6222e19b" />
 <br>
