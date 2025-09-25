@@ -491,15 +491,15 @@
     <comp lib="8" loc="(145,90)" name="Text">
       <a name="text" val="INPUTS to your circuit"/>
     </comp>
-    <comp lib="8" loc="(439,36)" name="Text">
+    <comp lib="8" loc="(435,35)" name="Text">
       <a name="font" val="SansSerif plain 20"/>
       <a name="text" val="Split relevant bits"/>
     </comp>
-    <comp lib="8" loc="(699,376)" name="Text">
+    <comp lib="8" loc="(695,375)" name="Text">
       <a name="font" val="SansSerif plain 20"/>
       <a name="text" val="Generate Imm-value for each type"/>
     </comp>
-    <comp lib="8" loc="(701,47)" name="Text">
+    <comp lib="8" loc="(700,45)" name="Text">
       <a name="font" val="SansSerif plain 20"/>
       <a name="text" val="Select instruction type"/>
     </comp>
